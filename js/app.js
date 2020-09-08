@@ -1,4 +1,3 @@
-
 // Dynamically update copyright year in footer
 let copyright = document.getElementById('footer');
 let d = new Date();
@@ -45,4 +44,43 @@ filterBtns.addEventListener('click', e => {
             portfolioItems[i].style.display = '';
         }
     }
+});
+
+// Fade in bottom content on scroll (DIY Scrollspy)
+let aboutSection = document.getElementById('about');
+let contactSection = document.getElementById('contact');
+
+window.addEventListener('scroll', e => {
+    // Get the page height to calculate responsive percentages down the page for the scroll.
+    let pageHeight = document.body.clientHeight;
+    let scrollDistance = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0; //Extra conditions added to account for different browsers.
+
+    //Display the about section when the user has scrolled more than a third down the page. Wait longer to display on taller screens (like mobile phones).
+    console.log(pageHeight);
+    // Desktop
+    if (pageHeight < 1700) {
+        if (scrollDistance > pageHeight * 0.3) {
+            aboutSection.classList.add('is-visible');
+        }
+        if (scrollDistance > pageHeight * 0.41) {
+            contactSection.classList.add('is-visible');
+        }
+    // Mobile phones
+    } else if (pageHeight > 2200) {
+        if (scrollDistance > pageHeight * 0.45) {
+            aboutSection.classList.add('is-visible');
+        }
+        if (scrollDistance > pageHeight * 0.6) {
+            contactSection.classList.add('is-visible');
+        }
+    // Smaller desktop screens and tablets
+    } else {
+        if (scrollDistance > pageHeight * 0.4) {
+            aboutSection.classList.add('is-visible');
+        }
+        if (scrollDistance > pageHeight * 0.54) {
+            contactSection.classList.add('is-visible');
+        }
+    }
+
 });
