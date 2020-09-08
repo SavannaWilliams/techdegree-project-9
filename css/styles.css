@@ -33,7 +33,33 @@ nav a {
 }
 
 .button:hover {
-    background-color: var(--dark-blue);
+    background-color: red;
+}
+
+.portfolio-details-btn,
+.portfolio-site-btn {
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  box-shadow: 3px 5px 3px 2px #bbb;
+  transition: background-color .4s ease-in;
+}
+
+.portfolio-details-btn:hover,
+.portfolio-site-btn:hover {
+  background-color: blue;
+}
+
+.portfolio-details-btn {
+  background-color: red;
+}
+
+.portfolio-site-btn {
+  background-color: purple; 
 }
 
 #portfolio h2,
