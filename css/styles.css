@@ -1,10 +1,6 @@
 /* ================================= 
   Base Styles
 ==================================== */
-* {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -34,6 +30,13 @@ nav a {
 
 .button:hover {
     background-color: red;
+}
+
+.portfolio-card img {
+  width: 320px;
+  height: 157px;
+  object-fit: contain;
+  box-shadow: 3px 5px 3px 2px #bbb;
 }
 
 .portfolio-details-btn,
@@ -109,10 +112,12 @@ header {
 }
 
 .portfolio-card {
-    border: 1px solid gray;
     width: 450px;
-    height: 240px;
+    height: 260px;
+    box-shadow: 3px 5px 3px 2px #bbb;
     margin: auto 10px 30px 10px;
+    padding: 20px;
+    text-align: center;
 }
 
 #about {
