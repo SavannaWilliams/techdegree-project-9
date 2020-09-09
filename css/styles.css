@@ -89,16 +89,21 @@ header {
     align-items: center;
     width: 50%;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 #welcome img {
     width: 40%;
 }
 
+#portfolio {
+  margin-bottom: 100px;
+}
+
 .portfolio-gallery {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -123,6 +128,8 @@ header {
 #about {
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 100px;
+
 }
 
 .skill-gallery {
@@ -144,6 +151,8 @@ header {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    margin-bottom: 50px;
+
 }
 
 footer {
