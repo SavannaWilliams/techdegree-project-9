@@ -71,6 +71,14 @@ nav a {
     text-align: center;
 }
 
+p {
+  line-height: 1.3rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 /* ================================= 
   Layout Styles
 ==================================== */
@@ -97,7 +105,7 @@ header {
 }
 
 #portfolio {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .portfolio-gallery {
@@ -127,12 +135,20 @@ header {
 
 #about {
     width: 60%;
-    margin: 0 auto;
-    margin-bottom: 100px;
-
+    margin: 0 auto 50px auto;
+    text-align: center;
 }
 
-.skill-gallery {
+#education {
+  margin-bottom: 50px;
+}
+
+.about-para {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#skill-gallery {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -141,7 +157,7 @@ header {
 
 .skill-card {
     padding: 20px 40px 40px;
-    max-width: 500px;
+    max-width: 400px;
     text-align: left;
     border: 4px solid #ccc;
     border-radius: 6px;
@@ -199,7 +215,11 @@ footer {
     width: 70%;
   }
   
-  /* Programming Skill Bars */
+  .bar-empathy-maps {
+    width: 70%;
+  }
+
+  /* Web Development Skill Bars */
   .bar-html {
     width: 100%;
   }
@@ -211,6 +231,10 @@ footer {
   }
   .bar-bootstrap {
     width: 65%;
+  }
+
+  .bar-git {
+    width: 100%;
   }
   
   .bar p {

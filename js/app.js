@@ -47,7 +47,8 @@ filterBtns.addEventListener('click', e => {
 });
 
 // Fade in bottom content on scroll (DIY Scrollspy)
-let aboutSection = document.getElementById('about');
+let educationSection = document.getElementById('education');
+let skillsSection = document.getElementById('skill-gallery');
 let contactSection = document.getElementById('contact');
 
 window.addEventListener('scroll', e => {
@@ -59,16 +60,22 @@ window.addEventListener('scroll', e => {
     console.log(pageHeight);
     // Desktop
     if (pageHeight < 1700) {
-        if (scrollDistance > pageHeight * 0.3) {
-            aboutSection.classList.add('is-visible');
+        if (scrollDistance > pageHeight * 0.2) {
+            educationSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.41) {
+        if (scrollDistance > pageHeight * 0.25) {
+            skillsSection.classList.add('is-visible');
+        }
+        if (scrollDistance > pageHeight * 0.31) {
             contactSection.classList.add('is-visible');
         }
     // Mobile phones
     } else if (pageHeight > 2200) {
         if (scrollDistance > pageHeight * 0.45) {
-            aboutSection.classList.add('is-visible');
+            educationSection.classList.add('is-visible');
+        }
+        if (scrollDistance > pageHeight * 0.5) {
+            skillsSection.classList.add('is-visible');
         }
         if (scrollDistance > pageHeight * 0.6) {
             contactSection.classList.add('is-visible');
@@ -76,7 +83,10 @@ window.addEventListener('scroll', e => {
     // Smaller desktop screens and tablets
     } else {
         if (scrollDistance > pageHeight * 0.4) {
-            aboutSection.classList.add('is-visible');
+            educationSection.classList.add('is-visible');
+        }
+        if (scrollDistance > pageHeight * 0.47) {
+            skillsSection.classList.add('is-visible');
         }
         if (scrollDistance > pageHeight * 0.54) {
             contactSection.classList.add('is-visible');
