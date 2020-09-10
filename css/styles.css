@@ -1,9 +1,17 @@
 /* ================================= 
   Base Styles
 ==================================== */
+:root {
+  --blue: #08aeea;
+  --dark-grey: #3f3d56;
+}
+
 body {
     font-family: 'Lato', sans-serif;
+    margin-top: 80px; /* To accomodate sticky header */
 }
+
+/* To accomodate sticky header */
 
 .wrapper {
     width: 90%;
@@ -15,22 +23,10 @@ nav a {
     color: initial;
 }
 
-.button {
-    background-color: black;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.4rem;
-    margin-top: 30px;
-    box-shadow: 3px 5px 3px 2px #bbb;
-    transition: background-color .4s ease-in;
+nav a:hover {
+  color: var(--blue);
 }
 
-.button:hover {
-    background-color: red;
-}
 
 .portfolio-card img {
   width: 320px;
@@ -39,30 +35,61 @@ nav a {
   box-shadow: 3px 5px 3px 2px #bbb;
 }
 
+.button,
 .portfolio-details-btn,
 .portfolio-site-btn {
+  display: inline-block;
   color: #fff;
-  padding: 12px 30px;
+  padding: 12px 20px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.4rem;
-  margin-top: 30px;
+  font-size: 1.2rem;
+  margin: 0 10px 0 10px;
   box-shadow: 3px 5px 3px 2px #bbb;
-  transition: background-color .4s ease-in;
+  transition: background-color .4s ease-in, transform .4s ease-in;
 }
 
-.portfolio-details-btn:hover,
-.portfolio-site-btn:hover {
-  background-color: blue;
+.button {
+  font-size: 1.5rem;
+}
+
+.button,
+.portfolio-site-btn {
+  background-color: var(--blue); 
 }
 
 .portfolio-details-btn {
-  background-color: red;
+  background-color: var(--dark-grey);
 }
 
-.portfolio-site-btn {
-  background-color: purple; 
+.filter-btns {
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: var(--dark-grey);
+  color: #fff;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 10px 0 10px;
+  box-shadow: 3px 5px 3px 2px #bbb;
+  transition: background-color .4s ease-in, transform .4s ease-in;
+  cursor: pointer;
+}
+
+.button:hover,
+.portfolio-site-btn:hover {
+  background-color: #0294c9;
+  transform: scale(.9);
+}
+
+.filter-btns:hover,
+.portfolio-details-btn:hover {
+  background-color: #15141c;
+  transform: scale(.9);
 }
 
 #portfolio h2,
@@ -88,6 +115,15 @@ header {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    /* Make sticky header. Top, left, right required to give flexbox space. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #fff;
 }
 
 #welcome {
@@ -108,6 +144,12 @@ header {
   margin-bottom: 50px;
 }
 
+#portfolio hr {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
 .portfolio-gallery {
     display: flex;
     flex-flow: row wrap;
@@ -116,9 +158,9 @@ header {
 }
 
 #portfolio-buttons {
-    width: 25%;
+    width: 35%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto 30px auto;
