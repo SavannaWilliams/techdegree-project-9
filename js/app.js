@@ -13,6 +13,10 @@ let webDevBtn = document.getElementById('btn-web-dev');
 // Get all portfolio cards
 let portfolioItems = document.getElementsByClassName('portfolio-card');
 
+// Focus on all button on page load, but with no transition. Then allow for transitions.
+allBtn.focus();
+allBtn.classList.remove('no-transition');
+
 // Turn on/off portfolio card display based on button clicked
 filterBtns.addEventListener('click', e => {
     if (e.target === uiBtn) {
@@ -82,13 +86,13 @@ window.addEventListener('scroll', e => {
         }
     // Smaller desktop screens and tablets
     } else {
-        if (scrollDistance > pageHeight * 0.4) {
+        if (scrollDistance > pageHeight * 0.3) {
             educationSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.47) {
+        if (scrollDistance > pageHeight * 0.37) {
             skillsSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.54) {
+        if (scrollDistance > pageHeight * 0.44) {
             contactSection.classList.add('is-visible');
         }
     }

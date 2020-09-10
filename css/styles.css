@@ -21,12 +21,12 @@ body {
 nav a {
     text-decoration: none;
     color: initial;
+    margin-left: 20px;
 }
 
 nav a:hover {
   color: var(--blue);
 }
-
 
 .portfolio-card img {
   width: 320px;
@@ -92,6 +92,15 @@ nav a:hover {
   transform: scale(.9);
 }
 
+.filter-btns:focus {
+  outline: 0;
+  background-color: var(--blue); 
+}
+
+.no-transition {
+  transition: none !important;
+}
+
 #portfolio h2,
 #about h2,
 #contact h2 {
@@ -133,7 +142,7 @@ header {
     align-items: center;
     width: 50%;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 
 #welcome img {
@@ -144,7 +153,7 @@ header {
   margin-bottom: 50px;
 }
 
-#portfolio hr {
+hr {
   width: 60%;
   margin: 0 auto;
   margin-bottom: 30px;
@@ -206,11 +215,34 @@ header {
 }
 
 #contact {
+    width: 60%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-bottom: 50px;
+    margin: 0 auto 50px auto;
+}
 
+#contact p {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 20px auto;
+}
+
+#contact .button {
+  margin-bottom: 40px;
+}
+
+.social-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 0 10px 0 10px;
 }
 
 footer {
@@ -230,7 +262,7 @@ footer {
   }
   
   .bar-skill{
-    background-color: #ff9904;
+    background-color: var(--blue);
     height: 24px;
     border-radius: 20px;
   }
