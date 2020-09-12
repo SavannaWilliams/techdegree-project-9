@@ -63,10 +63,12 @@ window.addEventListener('scroll', e => {
     // Get the page height to calculate responsive percentages down the page for the scroll.
     let pageHeight = document.body.clientHeight;
     let scrollDistance = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0; //Extra conditions added to account for different browsers.
+    console.log(pageHeight);
 
     //Display the about section when the user has scrolled more than a third down the page. Wait longer to display on taller screens (like mobile phones).
+
     // Desktop
-    if (pageHeight < 1700) {
+    if (pageHeight < 3000) {
         if (scrollDistance > pageHeight * 0.2) {
             educationSection.classList.add('is-visible');
         }
@@ -77,7 +79,7 @@ window.addEventListener('scroll', e => {
             contactSection.classList.add('is-visible');
         }
     // Mobile phones
-    } else if (pageHeight > 2200) {
+    } else if (pageHeight > 4000) {
         if (scrollDistance > pageHeight * 0.45) {
             educationSection.classList.add('is-visible');
         }
@@ -89,13 +91,13 @@ window.addEventListener('scroll', e => {
         }
     // Smaller desktop screens and tablets
     } else {
-        if (scrollDistance > pageHeight * 0.3) {
+        if (scrollDistance > pageHeight * 0.25) {
             educationSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.37) {
+        if (scrollDistance > pageHeight * 0.32) {
             skillsSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.44) {
+        if (scrollDistance > pageHeight * 0.4) {
             contactSection.classList.add('is-visible');
         }
     }
