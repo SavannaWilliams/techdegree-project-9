@@ -114,6 +114,10 @@ p {
   font-weight: 700;
 }
 
+.active-link {
+  color: var(--blue);
+}
+
 /* ================================= 
   Layout Styles
 ==================================== */
@@ -235,11 +239,12 @@ hr {
 }
 
 .social-icons {
+  max-width: 175px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 auto 15px auto;
 }
 
 .social-icons img {
