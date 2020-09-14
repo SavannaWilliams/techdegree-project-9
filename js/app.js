@@ -61,26 +61,19 @@ let navLinks = document.querySelectorAll('#navigation a');
 
 window.addEventListener('scroll', e => {
     // Get the page height to calculate responsive percentages down the page for the scroll.
-    let pageHeight = document.body.clientHeight;
+    let body = document.body;
+    let html = document.documentElement;
+    let pageHeight = Math.max(body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight ); //Extra conditions added to account for different browsers and find highest number returned.
     let scrollDistance = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0; //Extra conditions added to account for different browsers.
     console.log(pageHeight);
+    console.log(scrollDistance);
 
     //Display the about section when the user has scrolled more than a third down the page. Wait longer to display on taller screens (like mobile phones).
 
     // Desktop
     if (pageHeight < 3000) {
-        if (scrollDistance > pageHeight * 0.2) {
-            educationSection.classList.add('is-visible');
-        }
-        if (scrollDistance > pageHeight * 0.25) {
-            skillsSection.classList.add('is-visible');
-        }
-        if (scrollDistance > pageHeight * 0.31) {
-            contactSection.classList.add('is-visible');
-        }
-    // Mobile phones
-    } else if (pageHeight > 4000) {
-        if (scrollDistance > pageHeight * 0.45) {
+        if (scrollDistance > pageHeight * 0.4) {
             educationSection.classList.add('is-visible');
         }
         if (scrollDistance > pageHeight * 0.5) {
@@ -89,18 +82,18 @@ window.addEventListener('scroll', e => {
         if (scrollDistance > pageHeight * 0.6) {
             contactSection.classList.add('is-visible');
         }
-    // Smaller desktop screens and tablets
-    } else {
-        if (scrollDistance > pageHeight * 0.25) {
+    // Mobile phones
+    } else if (pageHeight >= 3000) {
+        if (scrollDistance > pageHeight * 0.5) {
             educationSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.32) {
+        if (scrollDistance > pageHeight * 0.65) {
             skillsSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.4) {
+        if (scrollDistance > pageHeight * 0.7) {
             contactSection.classList.add('is-visible');
         }
-    }
+    } 
 
     // Reset nav home link to active color at top of page
     if (scrollDistance < 100) {
