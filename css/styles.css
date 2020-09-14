@@ -14,24 +14,30 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-    margin-top: 80px; /* To accomodate sticky header */
+    margin-top: 140px; /* To accomodate sticky header */
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 80px); /* Have to subtract sticky header margin from height to appropriately place sticky footer. */
-
+    height: calc(100vh - 90px); /* Have to subtract sticky header margin from height to appropriately place sticky footer. */
 }
 
 .wrapper {
     width: 90%;
-    margin: 20px auto;
+    margin: 0 auto;
     flex: 1 0 auto;
+}
 
+header h1 {
+  margin-bottom: 5px;
 }
 
 nav a {
     text-decoration: none;
     color: initial;
-    margin-left: 20px;
+    font-size: .9rem;
+}
+
+nav a:not(:first-of-type) {
+  margin-left: 20px;
 }
 
 nav a:hover {
@@ -54,14 +60,18 @@ nav a:hover {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.2rem;
   margin: 0 10px 0 10px;
   box-shadow: 3px 5px 3px 2px var(--grey);
   transition: background-color .4s ease-in, transform .4s ease-in;
 }
 
 .button {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.portfolio-details-btn,
+.portfolio-site-btn {
+  font-size: 1.2rem;
 }
 
 .button,
@@ -135,7 +145,7 @@ p {
 
 header {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     /* Make sticky header. Top, left, right required to give flexbox space. */
@@ -146,17 +156,23 @@ header {
     width: 90%;
     height: 80px;
     margin: 0 auto;
+    padding-bottom: 10px;
     background-color: #fff;
+    z-index: 2;
 }
 
 #welcome {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 70px;
+}
+
+#welcome h2 {
+  display: none;
 }
 
 #welcome img {
@@ -165,6 +181,10 @@ header {
 
 #portfolio {
   margin-bottom: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
 }
 
 hr {
@@ -175,18 +195,17 @@ hr {
 
 .portfolio-gallery {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
 }
 
 #portfolio-buttons {
-    width: 35%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto 30px auto;
+    margin-bottom: 30px;
 }
 
 .portfolio-card {
@@ -200,7 +219,6 @@ hr {
 }
 
 #about {
-    width: 60%;
     margin: 0 auto 50px auto;
     text-align: center;
 }
@@ -216,19 +234,24 @@ hr {
 
 #skill-gallery {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .skill-card {
-    padding: 20px 40px 40px;
-    max-width: 400px;
+    padding: 30px 20px;
+    width: 275px;
     text-align: left;
     border: 2px solid rgba(187, 187, 187, 1);
     box-shadow: 3px 5px 3px 2px var(--grey);
-
     border-radius: 6px;
+    margin: 0 auto;
+}
+
+.skill-card h3 {
+  margin-top: 0;
 }
 
 #contact {
@@ -275,7 +298,7 @@ footer {
 .bar {
     background-color: lightgray;
     border-radius: 20px;
-    width: 350px;
+    width: 90%;
     display: block;
     margin: auto;
   }
@@ -362,15 +385,7 @@ footer {
 
 .portfolio-title {
   margin-bottom: 40px;
-}
-
-.portfolio-title::after {
-  content: '';
-  height: 2px;
-  width: 12rem;
-  background: var(--blue);
-  display: inline-block;
-  margin-left: 20px;
+  text-align: center;
 }
 
 .portfolio-content {
@@ -418,11 +433,102 @@ footer {
 
 /* == Tablet media query == */
 @media only screen and (min-width: 768px) {
+
+  body {
+    /* Adjustments for smaller header height with no padding bottom */
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+  }
+
+  .button {
+    font-size: 1.5rem;
+  }
+
+  header {
+    flex-flow: row nowrap;
+    padding-bottom: 0;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  #welcome {
+    flex-flow: row wrap;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+#welcome h2 {
+  display: inline-block;
+}
+
+.portfolio-gallery {
+  flex-flow: row wrap;
+}
+
+.portfolio-card {
+  width: 320px;
+  height: 210px;
+}
+
+.portfolio-card a img {
+  width: 320px;
+  height: 110px;
+  object-fit: contain;
+  border-bottom: 1px solid rgba(187, 187, 187, .7);
+}
+
+#skill-gallery {
+  flex-flow: row nowrap;
+  width: 90%;
+}
+
+.skill-card {
+  width: 340px;
+  padding: 30px 40px;
+}
+
+.skill-card:first-of-type {
+  margin-right: 20px;
+}
+
+  /* Portfolio page styles */
+  .portfolio-title {
+    text-align: left;
+  }
+
+  .portfolio-title::after {
+    content: '';
+    height: 2px;
+    width: 12rem;
+    background: var(--blue);
+    display: inline-block;
+    margin-left: 20px;
+  }
 }
 
 /* == Desktop media query == */
 @media only screen and (min-width: 1024px) {
+  .portfolio-card {
+    width: 450px;
+    height: 260px;
+  }
+  
+  .portfolio-card a img {
+    width: 450px;
+    height: 160px;
+    object-fit: contain;
+    border-bottom: 1px solid rgba(187, 187, 187, .7);
+  }
+  
+  #skill-gallery {
+    flex-flow: row wrap;
+    width: 0%;
+  }
 
+  /* Portfolio page styles */
   .portfolio-content {
     display: flex;
     flex-flow: row nowrap;
