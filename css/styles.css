@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-    margin-top: 140px; /* To accomodate sticky header */
+    margin-top: 100px; /* To accomodate sticky header */
     display: flex;
     flex-direction: column;
     height: calc(100vh - 90px); /* Have to subtract sticky header margin from height to appropriately place sticky footer. */
@@ -44,13 +44,6 @@ nav a:hover {
   color: var(--blue);
 }
 
-.portfolio-card a img {
-  width: 450px;
-  height: 160px;
-  object-fit: contain;
-  border-bottom: 1px solid rgba(187, 187, 187, .7);
-}
-
 .button,
 .portfolio-details-btn,
 .portfolio-site-btn {
@@ -71,7 +64,11 @@ nav a:hover {
 
 .portfolio-details-btn,
 .portfolio-site-btn {
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+.portfolio-details-btn {
+  margin-bottom: 15px;
 }
 
 .button,
@@ -202,21 +199,34 @@ hr {
 
 #portfolio-buttons {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
 
+#portfolio-buttons button {
+  margin-top: 10px;
+  font-size: .9rem;
+}
+
 .portfolio-card {
-    width: 450px;
-    height: 260px;
+    width: 250px;
+    height: 210px;
     border: 1px solid rgba(187, 187, 187, .4);
     box-shadow: 3px 5px 3px 2px var(--grey);
     margin: auto 10px 40px 10px;
     padding-bottom: 30px;
     text-align: center;
 }
+
+.portfolio-card a img {
+  width: 250px;
+  height: 90px;
+  object-fit: contain;
+  border-bottom: 1px solid rgba(187, 187, 187, .7);
+}
+
 
 #about {
     margin: 0 auto 50px auto;
@@ -242,12 +252,12 @@ hr {
 
 .skill-card {
     padding: 30px 20px;
-    width: 275px;
+    width: 225px;
     text-align: left;
     border: 2px solid rgba(187, 187, 187, 1);
     box-shadow: 3px 5px 3px 2px var(--grey);
     border-radius: 6px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
 }
 
 .skill-card h3 {
@@ -255,7 +265,7 @@ hr {
 }
 
 #contact {
-    width: 60%;
+    width: 90%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -263,7 +273,7 @@ hr {
 }
 
 #contact p {
-  width: 50%;
+  width: 90%;
   text-align: center;
   margin: 0 auto 20px auto;
 }
@@ -458,41 +468,70 @@ footer {
     width: 90%;
     margin: 0 auto;
     margin-bottom: 70px;
+  }
+
+  #welcome h2 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  #welcome .button {
+    margin: 15px auto 0 auto;
+  }
+
+  #portfolio-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-#welcome h2 {
-  display: inline-block;
-}
+  .portfolio-gallery {
+    flex-flow: row wrap;
+  }
 
-.portfolio-gallery {
-  flex-flow: row wrap;
-}
+  .portfolio-card {
+    width: 320px;
+    height: 210px;
+  }
 
-.portfolio-card {
-  width: 320px;
-  height: 210px;
-}
+  .portfolio-card a img {
+    width: 320px;
+    height: 110px;
+    object-fit: contain;
+    border-bottom: 1px solid rgba(187, 187, 187, .7);
+  }
 
-.portfolio-card a img {
-  width: 320px;
-  height: 110px;
-  object-fit: contain;
-  border-bottom: 1px solid rgba(187, 187, 187, .7);
-}
+  .portfolio-details-btn {
+    margin-bottom: 0;
+  }
 
-#skill-gallery {
-  flex-flow: row nowrap;
-  width: 90%;
-}
+  .portfolio-details-btn,
+  .portfolio-site-btn {
+    font-size: 1.2rem;
+  }
 
-.skill-card {
-  width: 340px;
-  padding: 30px 40px;
-}
+  #skill-gallery {
+    flex-flow: row nowrap;
+    width: 90%;
+  }
 
-.skill-card:first-of-type {
-  margin-right: 20px;
-}
+  .skill-card {
+    width: 35%;
+    height: 250px;
+    padding: 20px 30px;
+    margin: 0 auto;
+  }
+
+
+  #contact {
+    width: 60%;
+  }
+
+  #contact p {
+    width: 50%;
+  }
 
   /* Portfolio page styles */
   .portfolio-title {
@@ -511,6 +550,11 @@ footer {
 
 /* == Desktop media query == */
 @media only screen and (min-width: 1024px) {
+  #welcome {
+    width: 60%;
+    margin-bottom: 50px;
+  }
+
   .portfolio-card {
     width: 450px;
     height: 260px;
@@ -525,8 +569,13 @@ footer {
   
   #skill-gallery {
     flex-flow: row wrap;
-    width: 0%;
+    width: 60%;
   }
+
+  .skill-card {
+    margin: 0 auto 20px auto;
+  }
+
 
   /* Portfolio page styles */
   .portfolio-content {
@@ -541,6 +590,7 @@ footer {
   .portfolio-img {
     width: 90%;
     margin-right: 0;
+    margin-left: 0;
   }
 
   .portfolio-text {
