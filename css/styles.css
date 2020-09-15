@@ -588,13 +588,15 @@ footer {
   }
 
   .portfolio-img {
-    width: 90%;
-    margin-right: 0;
+    max-width: 1000px;
+    margin-right: 60px;
     margin-left: 0;
   }
 
   .portfolio-text {
+    max-width: 350px;
     align-items: flex-start;
+    margin-left: 40px;
   }
 
   .portfolio-text h3:first-of-type {
