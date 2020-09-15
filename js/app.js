@@ -73,13 +73,13 @@ window.addEventListener('scroll', e => {
 
     // Desktop
     if (pageHeight < 3000) {
-        if (scrollDistance > pageHeight * 0.4) {
+        if (scrollDistance > pageHeight * 0.38) {
             educationSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.5) {
+        if (scrollDistance > pageHeight * 0.45) {
             skillsSection.classList.add('is-visible');
         }
-        if (scrollDistance > pageHeight * 0.6) {
+        if (scrollDistance > pageHeight * 0.58) {
             contactSection.classList.add('is-visible');
         }
     // Mobile phones
@@ -100,7 +100,7 @@ window.addEventListener('scroll', e => {
         for (let i= 0; i < navLinks.length; i++) {
             navLinks[i].classList.remove('active-link');
         }
-        home.classList.add('active-link');
+        homeLink.classList.add('active-link');
     }
 
 });
